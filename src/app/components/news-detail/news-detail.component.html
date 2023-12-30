@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="botones">
+        <button mat-raised-button routerLink="/">Back</button>
+    </div>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle>
+            <mat-expansion-panel-header class="header">
+                <mat-panel-title>
+                    {{ article?.title }}
+                </mat-panel-title>
+                <div>
+                    <span *ngIf="panelOpenState === false">
+                        show all details
+                    </span>
+                    <span *ngIf="panelOpenState === true">
+                        close details
+                    </span>
+                </div>
+            </mat-expansion-panel-header>
+            <div class="content">
+                <div>
+                        {{ article?.description }}
+                    </div>
+                <div>
+                    <img [src]="article?.urlToImage" alt="image of article">
+                </div>
+                <div>
+                    <div>
+                        {{ article?.content }}
+                    </div>
+                    <div>
+                        {{ article?.publishedAt }}
+                    </div>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

@@ -1,0 +1,38 @@
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" [value]="view" class="botones" 
+    (change)="change(vista.value)"
+    #vista="matButtonToggleGroup">
+    <mat-button-toggle value="cards">
+        <mat-icon aria-hidden="false" aria-label="Cards" fontIcon="grid_view"></mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="tabla">
+        <mat-icon aria-hidden="false" aria-label="List" fontIcon="list"></mat-icon>
+    </mat-button-toggle>
+</mat-button-toggle-group>
+
+<div *ngIf="vista.value === 'cards' && data && data.articles.length > 0" class="card-container">
+    <a [routerLink]="['/news', news.url]" *ngFor="let news of data?.articles" class="card">
+        <mat-card >
+            <mat-card-header>
+                <mat-card-title>{{ news.title }}</mat-card-title>
+                <mat-card-subtitle>{{ news.source.name }} {{ news.publishedAt }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{ news.urlToImage}}" alt="news image">
+            <mat-card-content>
+                <p>{{ news.description }}</p>
+            </mat-card-content>
+        </mat-card>
+    </a>
+</div>
+
+<mat-list *ngIf="vista.value === 'tabla' && data && data.articles.length > 0" class="tabla-container">
+    <a [routerLink]="['/news', news.url ]" *ngFor="let news of data?.articles">
+        <mat-list-item>
+            {{ news.title }}
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </a>
+</mat-list>
+
+<div *ngIf="data && data.articles.length === 0">
+    Not news... Good news?
+</div>
