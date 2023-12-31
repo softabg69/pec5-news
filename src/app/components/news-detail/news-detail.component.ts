@@ -24,8 +24,6 @@ export class NewsDetailComponent {
     } else {
       this.router.navigateByUrl('/');
     }
-
   }
-
 
 }

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { NewsService } from './services/news.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pec5-news';
+  loading = true;
+  newsSubscription: Subscription;
+
+    constructor(private newsService: NewsService) { 
+      this.newsSubscription = this.newsService.loading$.subscribe((l)=> {
+        this.loading = l;
+      });
+    }
 }
