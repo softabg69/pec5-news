@@ -9,7 +9,7 @@
     </mat-button-toggle>
 </mat-button-toggle-group>
 
-<div *ngIf="vista.value === 'cards' && data && data.articles.length > 0" class="card-container">
+<div *ngIf="vista.value === 'cards' && data && data.articles.length > 0" class="card-container" [@listAnimation]="data.articles.length">
     <a [routerLink]="['/news', news.url]" *ngFor="let news of data?.articles" class="card">
         <mat-card >
             <mat-card-header>
@@ -24,7 +24,7 @@
     </a>
 </div>
 
-<mat-list *ngIf="vista.value === 'tabla' && data && data.articles.length > 0" class="tabla-container">
+<mat-list *ngIf="vista.value === 'tabla' && data && data.articles.length > 0" class="tabla-container" [@listAnimation]="data.articles.length">
     <a [routerLink]="['/news', news.url ]" *ngFor="let news of data?.articles">
         <mat-list-item>
             {{ news.title }}

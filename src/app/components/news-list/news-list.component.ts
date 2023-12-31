@@ -2,11 +2,26 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Root } from 'src/app/models/root.interface';
 import { NewsService } from 'src/app/services/news.service';
+import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
+
+const listAnimation = trigger('listAnimation', [
+  transition('* <=> *', [
+    query(':enter',
+      [style({ opacity: 0 }), stagger('60ms', animate('600ms ease-out', style({ opacity: 1 })))],
+      { optional: true }
+    ),
+    query(':leave',
+      animate('200ms', style({ opacity: 0 })),
+      { optional: true}
+    )
+  ])
+]);
 
 @Component({
   selector: 'app-news-list',
   templateUrl: './news-list.component.html',
-  styleUrls: ['./news-list.component.css']
+  styleUrls: ['./news-list.component.css'],
+  animations: [listAnimation]
 })
 export class NewsListComponent implements OnInit, OnDestroy {
   data: Root | undefined = undefined;
