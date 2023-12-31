@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1704020441018,
+  "timestamp": 1704021487524,
   "index": "/pec5-news/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/pec5-news/favicon.ico",
         "/pec5-news/index.html",
-        "/pec5-news/main.3cebf79b56949f54.js",
+        "/pec5-news/main.3bcab47c9bc44aa5.js",
         "/pec5-news/manifest.webmanifest",
         "/pec5-news/polyfills.e9571316f83517d8.js",
         "/pec5-news/runtime.b53a76aba16098e8.js",
@@ -81,8 +81,8 @@
     "/pec5-news/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
     "/pec5-news/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
     "/pec5-news/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/pec5-news/index.html": "bf63dce2fd537a8c14bce9237ebfbb19c1a7f2ff",
-    "/pec5-news/main.3cebf79b56949f54.js": "8ceaca71578d8ed6d724e120b38a52f88a70ec01",
+    "/pec5-news/index.html": "3b4002659e4d0f3a83cc5c0b70ad094a0cf32c92",
+    "/pec5-news/main.3bcab47c9bc44aa5.js": "ee06b049d94a50765f559f9a4fa581abdf4e6f70",
     "/pec5-news/manifest.webmanifest": "9bec0d545dbdec2fbc355d6353270c76fb84fd16",
     "/pec5-news/polyfills.e9571316f83517d8.js": "be843aaf047d60d5b00b28ef253997e6a6f56594",
     "/pec5-news/runtime.b53a76aba16098e8.js": "0e0ee18d7fd594dd937267901379b5751ab8f315",
